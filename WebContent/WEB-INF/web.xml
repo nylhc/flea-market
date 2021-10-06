@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>flea-market</display-name>
+  
+  	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>cn.kfu.soft.market.servlet.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>privilegeFilter</filter-name>
+		<filter-class>cn.kfu.soft.market.servlet.PrivilegeFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>privilegeFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+	</filter-mapping>
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>cn.kfu.soft.market.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>cn.kfu.soft.market.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+		<servlet-name>MyAccountServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.MyAccountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyAccountServlet</servlet-name>
+		<url-pattern>/myAccount</url-pattern>
+	</servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ShowIndexServlet</servlet-name>
+    <servlet-class>cn.kfu.soft.market.servlet.ShowIndexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowIndexServlet</servlet-name>
+    <url-pattern>/ShowIndexServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>cn.kfu.soft.market.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CheckimagecodeServlet</servlet-name>
+    <servlet-class>cn.kfu.soft.market.servlet.CheckimagecodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckimagecodeServlet</servlet-name>
+    <url-pattern>/imageCode</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+		<servlet-name>ProductShowServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.ProductShowServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+		<servlet-name>ProductShowServlet</servlet-name>
+		<url-pattern>/showProductByPage</url-pattern>
+   </servlet-mapping>
+		
+	<servlet>
+		<servlet-name>MenuSearchServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.MenuSearchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MenuSearchServlet</servlet-name>
+		<url-pattern>/MenuSearchServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ProductFind</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.ProductFind</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductFind</servlet-name>
+		<url-pattern>/findProductById</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ClientaddProductServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.ClientaddProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ClientaddProductServlet</servlet-name>
+		<url-pattern>/clientaddProduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CartServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.CartServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CartServlet</servlet-name>
+		<url-pattern>/addCart</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CartChangeServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.CartChangeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CartChangeServlet</servlet-name>
+		<url-pattern>/changeCart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreateOrderServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.CreateOrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateOrderServlet</servlet-name>
+		<url-pattern>/createOrder</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>FindOrderByUserServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.FindOrderByUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindOrderByUserServlet</servlet-name>
+		<url-pattern>/findOrderByUser</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>FindOrderByIdServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.FindOrderByIdServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindOrderByIdServlet</servlet-name>
+		<url-pattern>/findOrderById</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DelOrderByIdServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.DelOrderByIdServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelOrderByIdServlet</servlet-name>
+		<url-pattern>/delOrderById</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>ChangeOrderStateServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.ChangeOrderStateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChangeOrderStateServlet</servlet-name>
+		<url-pattern>/orderstate</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PayServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.PayServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PayServlet</servlet-name>
+		<url-pattern>/pay</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LeavingServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.LeavingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LeavingServlet</servlet-name>
+		<url-pattern>/leave</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>ProductListServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.ProductListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductListServlet</servlet-name>
+		<url-pattern>/listProduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FindProductByConditionServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.FindProductByConditionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindProductByConditionServlet</servlet-name>
+		<url-pattern>/findProductByCondition</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EditProductServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.EditProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditProductServlet</servlet-name>
+		<url-pattern>/editProduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddProductServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.AddProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddProductServlet</servlet-name>
+		<url-pattern>/addProduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.DeleteProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<url-pattern>/deleteProduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FindOrdersServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.FindOrdersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindOrdersServlet</servlet-name>
+		<url-pattern>/findOrders</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>FindOrderByConditionServlet</servlet-name>
+		<servlet-class>cn.kfu.soft.market.servlet.FindOrderByConditionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindOrderByConditionServlet</servlet-name>
+		<url-pattern>/findOrderByCondition</url-pattern>
+	</servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
